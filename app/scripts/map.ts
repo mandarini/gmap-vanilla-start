@@ -111,7 +111,7 @@ function loadAllMarkers(map: google.maps.Map): void {
 
       /**
        * These data contain latitude and longitude information
-       * about electricity masts.
+       * about mobile phone masts.
        * If you look at the data, you will see that
        * the latitude is at position 18, and the longitude is at position 17.
        *
@@ -133,14 +133,20 @@ function loadAllMarkers(map: google.maps.Map): void {
        */
 
       masts.map((x: string[]) => {
-        let marker = new google.maps.Marker();
+        let marker = new google.maps.Marker({
+          position: new google.maps.LatLng(
+            parseFloat(x[18]),
+            parseFloat(x[17])
+          ),
+          icon: antenna
+        });
         /**
          * Marker contents here
          */
 
         /**
          * Now, let's create an info window.
-         * The data at position 14 of each row tells us the address of the masts.
+         * The data at position 14 (x[14]) of each row tells us the address of the masts.
          * When a user clicks on the marker, we want an info window to pop up
          * displaying only the address of the mast.
          *
@@ -150,6 +156,9 @@ function loadAllMarkers(map: google.maps.Map): void {
           /**
            * Info window here
            */
+          infoWindow.setPosition(e.latLng);
+          infoWindow.setContent(`<p>${x[14]}</p>`);
+          infoWindow.open(map, marker);
         });
         markers.push(marker);
       });
@@ -177,6 +186,7 @@ export function changeType() {
   dark_theme = !dark_theme;
 }
 export function toggleMasts(): void {
+  console.log("Toggled");
   if (!mastsVisible) {
     markers.map(marker => {
       marker.setMap(this_map);
