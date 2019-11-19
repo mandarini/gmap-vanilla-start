@@ -1,6 +1,7 @@
 /// <reference types="@types/markerclustererplus" />
 import {} from "google-maps";
 import * as styledMap from "./styledMap";
+import * as myCustomStyle from "./myCustomStyle";
 import { listenForDrawing } from "./drawing";
 import { placesSearch } from "./placesSearch";
 import { directionCalculator } from "./directions";
@@ -35,6 +36,13 @@ export function FunWithMaps(map: google.maps.Map) {
     }
   );
 
+  let my_custom_style = new google.maps.StyledMapType(
+    myCustomStyle.myCustomStyle as google.maps.MapTypeStyle[],
+    {
+      name: "Katerina's style"
+    }
+  );
+
   /**
    * Let's look at the Styled Map.
    *
@@ -44,10 +52,11 @@ export function FunWithMaps(map: google.maps.Map) {
 
   map.setCenter(london);
   map.mapTypes.set("dark_map", darkmap);
+  map.mapTypes.set("my_custom_style", my_custom_style);
   map.setMapTypeId("dark_map");
   map.setOptions({
     mapTypeControlOptions: {
-      mapTypeIds: ["roadmap", "terrain", "dark_map"]
+      mapTypeIds: ["roadmap", "terrain", "dark_map", "my_custom_style"]
     }
   });
 
