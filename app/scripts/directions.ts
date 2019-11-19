@@ -88,7 +88,7 @@ function calculateAndDisplayRoute(
       {
         origin: { query: origin.value },
         destination: { query: destination.value },
-        travelMode: google.maps.TravelMode.DRIVING
+        travelMode: google.maps.TravelMode.WALKING
       },
       (response: any, status: any) => {
         if (status === "OK") {
@@ -97,7 +97,7 @@ function calculateAndDisplayRoute(
             {
               origins: [origin.value],
               destinations: [destination.value],
-              travelMode: google.maps.TravelMode.DRIVING,
+              travelMode: google.maps.TravelMode.WALKING,
               unitSystem: google.maps.UnitSystem.METRIC
             },
             (response, status) => {
