@@ -45,6 +45,11 @@ export function FunWithMaps(map: google.maps.Map) {
   map.setCenter(london);
   map.mapTypes.set("dark_map", darkmap);
   map.setMapTypeId("dark_map");
+  map.setOptions({
+    mapTypeControlOptions: {
+      mapTypeIds: ["roadmap", "terrain", "dark_map"]
+    }
+  });
 
   const controls: HTMLElement = document.getElementById("controls");
 

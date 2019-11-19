@@ -18,11 +18,11 @@ export function listenersForControlButtons() {
     .addEventListener("click", (event: MouseEvent) => {
       map.city("man");
     });
-  document
-    .getElementById("lights")
-    .addEventListener("click", (event: MouseEvent) => {
-      map.changeType();
-    });
+  // document
+  //   .getElementById("lights")
+  //   .addEventListener("click", (event: MouseEvent) => {
+  //     map.changeType();
+  //   });
   document
     .getElementById("masts-toggle")
     .addEventListener("click", (event: MouseEvent) => {

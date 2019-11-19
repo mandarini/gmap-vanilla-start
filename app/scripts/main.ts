@@ -25,7 +25,7 @@ function initMap() {
     zoom: 11,
     scrollwheel: true,
     panControl: false,
-    mapTypeControl: false,
+    mapTypeControl: true,
     mapTypeControlOptions: {
       position: google.maps.ControlPosition.TOP_LEFT
     },
