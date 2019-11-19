@@ -70,7 +70,7 @@ export function FunWithMaps(map: google.maps.Map) {
   map.controls[google.maps.ControlPosition.TOP_RIGHT].push(drawingControls);
   map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(katlink);
   map.controls[google.maps.ControlPosition.TOP_CENTER].push(place_search);
-  
+
   directionCalculator(map);
   placesSearch(map);
   listenForDrawing(map);

@@ -61,8 +61,7 @@ export const styledMap = [
   {
     featureType: "road.highway",
     elementType: "geometry",
-    stylers: [{ color: "#666666" }]
-    // stylers: [{color: '#ff0000'}]
+    stylers: [{ color: "#00ff00" }]
   },
   {
     featureType: "road.highway",
@@ -107,7 +106,7 @@ export const styledMap = [
   {
     featureType: "water",
     elementType: "geometry.fill",
-    stylers: [{ color: "#222222" }]
+    stylers: [{ color: "#0000ff" }]
   },
   {
     featureType: "water",
