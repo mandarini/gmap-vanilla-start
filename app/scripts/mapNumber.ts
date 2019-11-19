@@ -3,7 +3,7 @@
  *
  * x is the number we want to map
  *
- * in_min - in_max is the range the numer is in
+ * in_min - in_max is the range the number is in
  *
  * out_min - out_max is the range we want to map the number to
  *
