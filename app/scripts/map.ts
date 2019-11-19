@@ -56,7 +56,7 @@ export function FunWithMaps(map: google.maps.Map) {
     "drawingControls"
   );
 
-  // Add the link to my side to the bottom right
+  // Add the link to my site to the bottom right
   const katlink: HTMLElement = document.getElementById("katlink");
 
   // Add the places search to the top center
@@ -66,6 +66,11 @@ export function FunWithMaps(map: google.maps.Map) {
   // https://developers.google.com/maps/documentation/javascript/controls#ControlPositioning
   map.controls[google.maps.ControlPosition.LEFT_TOP].push(controls);
 
+  map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(legend);
+  map.controls[google.maps.ControlPosition.TOP_RIGHT].push(drawingControls);
+  map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(katlink);
+  map.controls[google.maps.ControlPosition.TOP_CENTER].push(place_search);
+  
   directionCalculator(map);
   placesSearch(map);
   listenForDrawing(map);
@@ -242,47 +247,45 @@ function loadHeatmapData() {
     });
 }
 function loadGeoJson(map: google.maps.Map) {
-  /**
-   * Find the function that loads a GeoJson file in
-   * the documentation, and load the file from this path
-   *
-   * https://developers.google.com/maps/documentation/javascript/datalayer#load_geojson
-   *
-   * "assets/data/lonely.geojson"
-   */
-
-  /**
-   * Fix this code so that whenever we mouseover one of the
-   * elements, the value is displayed on our page.
-   *
-   * https://developers.google.com/maps/documentation/javascript/datalayer#change_appearance_dynamically
-   */
-
-  map.data.setStyle((feature: any) => {
-    // let lon =
-    /**
-     * Use the documentation to receive the
-     * Prevalence value of each feature.
-     * https://developers.google.com/maps/documentation/javascript/datalayer#declarative_style_rules
-     *
-     *
-     * If you do not undestand what the function mapNumber does, read it and ask me!
-     */
-    // let value = 255 - Math.round(mapNumber(lon, 0, 5, 0, 255));
-    // let color = "rgb(" + value + "," + value + "," + 0 + ")";
-    // return {
-    //   fillColor: color,
-    //   strokeWeight: 1
-    // };
-  });
-  infoWindow = new google.maps.InfoWindow();
-  /**
-   * Let's create an info window which will display the prevalence information
-   * when a shape/feature is clicked.
-   */
-  map.data.addListener("click", e => {
-    /**
-     * Info window here
-     */
-  });
+  // /**
+  //  * Find the function that loads a GeoJson file in
+  //  * the documentation, and load the file from this path
+  //  *
+  //  * https://developers.google.com/maps/documentation/javascript/datalayer#load_geojson
+  //  *
+  //  * "assets/data/lonely.geojson"
+  //  */
+  // /**
+  //  * Fix this code so that whenever we mouseover one of the
+  //  * elements, the value is displayed on our page.
+  //  *
+  //  * https://developers.google.com/maps/documentation/javascript/datalayer#change_appearance_dynamically
+  //  */
+  // map.data.setStyle((feature: any) => {
+  //   // let lon =
+  //   /**
+  //    * Use the documentation to receive the
+  //    * Prevalence value of each feature.
+  //    * https://developers.google.com/maps/documentation/javascript/datalayer#declarative_style_rules
+  //    *
+  //    *
+  //    * If you do not undestand what the function mapNumber does, read it and ask me!
+  //    */
+  //   // let value = 255 - Math.round(mapNumber(lon, 0, 5, 0, 255));
+  //   // let color = "rgb(" + value + "," + value + "," + 0 + ")";
+  //   // return {
+  //   //   fillColor: color,
+  //   //   strokeWeight: 1
+  //   // };
+  // });
+  // infoWindow = new google.maps.InfoWindow();
+  // /**
+  //  * Let's create an info window which will display the prevalence information
+  //  * when a shape/feature is clicked.
+  //  */
+  // map.data.addListener("click", e => {
+  //   /**
+  //    * Info window here
+  //    */
+  // });
 }

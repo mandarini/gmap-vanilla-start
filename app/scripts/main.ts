@@ -22,11 +22,17 @@ if (window["google"] && window["google"]["maps"]) {
 
 function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
-    /**
-     * Add your map options here
-     *
-     * https://developers-dot-devsite-v2-prod.appspot.com/maps/documentation/javascript/reference/map#MapOptions
-     */
+    zoom: 11,
+    scrollwheel: true,
+    panControl: false,
+    mapTypeControl: false,
+    zoomControl: true,
+    streetViewControl: false,
+    scaleControl: true,
+    zoomControlOptions: {
+      style: google.maps.ZoomControlStyle.LARGE,
+      position: google.maps.ControlPosition.RIGHT_BOTTOM
+    }
   });
   FunWithMaps(map);
 }
